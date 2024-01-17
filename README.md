@@ -35,4 +35,4 @@ Contributions are welcome! Please follow the standard fork-and-pull request work
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE.md).
