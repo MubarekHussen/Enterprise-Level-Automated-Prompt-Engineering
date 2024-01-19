@@ -60,7 +60,7 @@ def file_reader(path: str) -> str:
     return system_message
             
 
-def generate_test_data(prompt: str, context: str, num_test_output: str) -> str:
+def generate_prompt_data(prompt: str, context: str, num_test_output: str) -> str:
     """Return the classification of the hallucination.
     @parameter prompt: the prompt to be completed.
     @parameter user_message: the user message to be classified.
@@ -88,7 +88,7 @@ def main(num_test_output: str, objective: str):
     prompt_message = file_reader("prompts/prompt-generation-prompt.txt")
     context = str(context_message)
     prompt = str(prompt_message)
-    prompt_data = generate_test_data(prompt, context, num_test_output)
+    prompt_data = generate_prompt_data(prompt, context, num_test_output)
     
     def save_json(prompt_data) -> None:
         # Get the directory of the current script
