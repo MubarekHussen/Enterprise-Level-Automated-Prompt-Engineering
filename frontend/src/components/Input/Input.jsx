@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-const Input = () => {
-  const [objective, setObjective] = useState('');
+const Input = ({ objective, setObjective, handleSubmit }) => {
   const [expectedOutput, setExpectedOutput] = useState('');
   const [fileInput, setFileInput] = useState(null);
 
@@ -15,12 +14,6 @@ const Input = () => {
 
   const handleFileInputChange = (event) => {
     setFileInput(event.target.files[0]);
-  };
-
-  const handleSubmit = () => {
-    console.log('Objective:', objective);
-    console.log('Expected Output:', expectedOutput);
-    console.log('File Input:', fileInput);
   };
 
   return (
