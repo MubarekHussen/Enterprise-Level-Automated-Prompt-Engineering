@@ -78,7 +78,7 @@ def get_context_from_rag(user_objective):
     vectorstore = vectorize_data(texts, meta)
 
     query = user_objective
-    docs = vectorstore.similarity_search(query, k=5)
+    docs = vectorstore.similarity_search(query, k=4)
 
     context = " ".join(doc.page_content for doc in docs)
 

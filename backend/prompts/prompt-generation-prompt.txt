@@ -7,10 +7,10 @@ The output MUST BE in a json format.
 example:
 [
 {
-    "prompt": "Prompt: What is the company's name?"
+    "prompt": What is the company's name?"
 },
 {
-    "prompt": "Prompt: Who is the CEO?"
+    "prompt": Who is the CEO?"
 }
 ]
 
