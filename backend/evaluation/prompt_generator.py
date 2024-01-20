@@ -84,7 +84,7 @@ def generate_prompt_data(prompt: str, context: str, num_test_output: str) -> str
 
 
 def main(num_test_output: str, objective: str):
-    context_message = context = get_context_from_rag(objective)
+    context_message = get_context_from_rag(objective)
     prompt_message = file_reader("prompts/prompt-generation-prompt.txt")
     context = str(context_message)
     prompt = str(prompt_message)
@@ -120,4 +120,4 @@ def main(num_test_output: str, objective: str):
 if __name__ == "__main__":
 
     user_objective = str(input("objective: "))
-    main("1", user_objective)  # n number of test data to generate
+    main("5", user_objective)  # n number of prompt data to generate
