@@ -25,6 +25,11 @@ The goal of this project is to create an APE system that can:
 - **Libraries and frameworks:** React and FastAPI
 - **LLM access:** Requires access to LLM APIs (e.g., GPT-4, GPT-3.5-Turbo) for prompt testing and application.
 
+# User Interface
+
+![Interface](screenshots/user_interface/Screenshot%20from%202024-01-20%2020-41-09.png)
+![Interface](screenshots/user_interface/Screenshot%20from%202024-01-20%2019-48-47.png)
+
 ## Setup and Usage
 
 Detailed setup and usage instructions will be provided once the system's development is further along.
