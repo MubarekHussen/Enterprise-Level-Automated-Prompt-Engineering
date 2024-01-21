@@ -3,7 +3,7 @@ import React from 'react';
 const Output = ({ data }) => {
   return (
     <div className='flex flex-col items-center justify-center h-screen py-20'>
-      <div className='bg-gray-200 p-8 rounded-lg shadow-lg h-full'>
+      <div className='bg-gray-200 p-8 rounded-lg shadow-lg h-full overflow-auto max-h-screen'>
         <h2 className='text-3xl font-bold mb-4'>Output</h2>
         {data.map((item, index) => (
           <div key={index} className='flex mb-4'>

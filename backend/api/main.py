@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, UploadFile, File
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 import sys
@@ -50,3 +50,11 @@ async def generate_and_evaluate_prompts(objective: Objective):
         })
 
     return results
+
+
+@app.post("/upload")
+async def upload_file(file: UploadFile = File(...)):
+    file_location = f"/home/mubarek/all_about_programing/10x_projects/Enterprise-Level-Automated-Prompt-Engineering/backend/pdfs/{file.filename}"
+    with open(file_location, "wb+") as file_object:
+        file_object.write(await file.read())
+    return {"info": f"file '{file.filename}' stored at location: '{file_location}'"}

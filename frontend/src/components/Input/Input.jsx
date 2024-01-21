@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-const Input = ({ objective, setObjective, handleSubmit }) => {
+const Input = ({ objective, setObjective, setFileInput, fileInput, handleSubmit }) => {
   const [expectedOutput, setExpectedOutput] = useState('');
-  const [fileInput, setFileInput] = useState(null);
 
   const handleObjectiveChange = (event) => {
     setObjective(event.target.value);
@@ -57,6 +56,7 @@ const Input = ({ objective, setObjective, handleSubmit }) => {
           </div>
           <button
             onClick={handleSubmit}
+            disabled={!fileInput}
             className='bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200'
           >
             Submit
