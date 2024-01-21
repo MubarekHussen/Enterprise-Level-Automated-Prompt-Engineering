@@ -58,7 +58,7 @@ def file_reader(path: str) -> str:
     with open(file_path, 'r') as f:
         system_message = f.read()
     return system_message
-            
+
 
 def generate_prompt_data(prompt: str, context: str, num_test_output: str) -> str:
     """Return the classification of the hallucination.
@@ -84,12 +84,12 @@ def generate_prompt_data(prompt: str, context: str, num_test_output: str) -> str
 
 
 def main(num_test_output: str, objective: str):
-    context_message = get_context_from_rag(objective)
+    context_message = context = get_context_from_rag(objective)
     prompt_message = file_reader("prompts/prompt-generation-prompt.txt")
     context = str(context_message)
     prompt = str(prompt_message)
     prompt_data = generate_prompt_data(prompt, context, num_test_output)
-    
+
     def save_json(prompt_data) -> None:
         # Get the directory of the current script
         script_dir = os.path.dirname(os.path.realpath(__file__))
@@ -106,7 +106,7 @@ def main(num_test_output: str, objective: str):
         json_object = json.loads(prompt_data)
         with open(file_path, 'w') as json_file:
             json.dump(json_object, json_file, indent=4)
-            
+
         print(f"JSON data has been saved to {file_path}")
 
     save_json(prompt_data)
@@ -120,4 +120,4 @@ def main(num_test_output: str, objective: str):
 if __name__ == "__main__":
 
     user_objective = str(input("objective: "))
-    main("5", user_objective)  # n number of prompt data to generate
+    main("3", user_objective)  # n number of test data to generate
