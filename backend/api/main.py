@@ -51,7 +51,6 @@ async def generate_and_evaluate_prompts(objective: Objective):
 
     return results
 
-
 @app.post("/upload")
 async def upload_file(file: UploadFile = File(...)):
     file_location = f"/home/mubarek/all_about_programing/10x_projects/Enterprise-Level-Automated-Prompt-Engineering/backend/pdfs/{file.filename}"

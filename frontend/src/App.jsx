@@ -4,11 +4,12 @@ import Output from './components/Output/Output';
 
 const App = () => {
   const [objective, setObjective] = useState('');
+  const [expectedOutput, setExpectedOutput] = useState('');
   const [fileInput, setFileInput] = useState(null);
   const [apiData, setApiData] = useState([]);
 
   const handleObjectiveSubmit = async () => {
-    const data = { objective: objective };
+    const data = { objective: objective, expected_output: expectedOutput };
   
     try {
       const response = await fetch('http://localhost:8000/generate-and-evaluate-prompts', {
