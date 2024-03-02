@@ -57,22 +57,12 @@ if __name__ == "__main__":
     context = str(context_message)
     prompt = str(prompt_message)
     
-    # Get the directory of the current script
     script_dir = os.path.dirname(os.path.realpath(__file__))
-
-    # Go one level up from the script's directory
     base_dir = os.path.dirname(script_dir)
-
-    # Specify the file path relative to the base directory
     file_path = os.path.join(base_dir, "prompt-dataset/prompt-data.json")
-
-    # Read the generated prompts file
     with open(file_path, 'r') as f:
         prompts = json.load(f)
 
-    # Extract the questions from the prompts
     questions = [prompt['prompt'] for prompt in prompts]
-
-    # Evaluate each question
     for question in questions:
         print(evaluate(prompt, question, context))
