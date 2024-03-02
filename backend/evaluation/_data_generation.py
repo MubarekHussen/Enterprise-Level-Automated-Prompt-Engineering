@@ -91,18 +91,10 @@ def main(num_test_output: str, objective: str):
     prompt = str(prompt_message)
     test_data = generate_test_data(prompt, context, num_test_output)
     def save_json(prompt_data) -> None:
-        # Get the directory of the current script
         script_dir = os.path.dirname(os.path.realpath(__file__))
-
-        # Get the parent directory
         parent_dir = os.path.dirname(script_dir)
-
-        # Specify the file path relative to the parent directory
         file_path = os.path.join(parent_dir, "test-dataset/test-data.json")
-
-        # Check if the directory exists and create it if it does not
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
-
         json_object = json.loads(prompt_data)
         with open(file_path, 'w') as json_file:
             json.dump(json_object, json_file, indent=4)
@@ -119,4 +111,4 @@ def main(num_test_output: str, objective: str):
 
 if __name__ == "__main__":
     user_objective = str(input("objective: "))
-    main("3", user_objective)  # n number of test data to generate
+    main("3", user_objective)
